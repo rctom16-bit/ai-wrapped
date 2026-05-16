@@ -2,7 +2,8 @@ import type { ReportData } from "../report";
 
 export function personalitySlide(data: ReportData): HTMLElement {
   const el = document.createElement("div");
-  el.className = "slide-card";
+  el.className = "slide-card theme-personality";
+  el.dataset.fireConfetti = "true";
   el.innerHTML = `
     <div class="label">Your AI personality is</div>
     <div class="archetype-emoji">${data.archetype.emoji}</div>

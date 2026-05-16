@@ -34,6 +34,8 @@ renderLanding(app, async (result) => {
 
     const hasChatGPT = !!result.chatgptFile;
     const hasClaude = !!result.claudeFile;
+    const chatgptMessageCount = countMessages(recent, "chatgpt");
+    const claudeMessageCount = countMessages(recent, "claude");
 
     const slideRenderers: SlideRenderer[] = [
       numbersSlide,
@@ -45,7 +47,11 @@ renderLanding(app, async (result) => {
       shareCardSlide,
     ];
 
-    renderReport(app, { stats, topics, archetype, highlights, hasChatGPT, hasClaude }, slideRenderers);
+    renderReport(
+      app,
+      { stats, topics, archetype, highlights, hasChatGPT, hasClaude, chatgptMessageCount, claudeMessageCount },
+      slideRenderers,
+    );
   } catch (err) {
     showError(app, err instanceof Error ? err.message : String(err));
   }
@@ -54,6 +60,12 @@ renderLanding(app, async (result) => {
 async function parseFile(file: File): Promise<Conversation[]> {
   const text = await file.text();
   return parseExport(JSON.parse(text)).conversations;
+}
+
+function countMessages(conversations: Conversation[], source: "chatgpt" | "claude"): number {
+  let n = 0;
+  for (const c of conversations) if (c.source === source) n += c.messages.length;
+  return n;
 }
 
 function showError(root: HTMLElement, message: string): void {

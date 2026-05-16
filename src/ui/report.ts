@@ -2,6 +2,7 @@ import type { Stats } from "../analysis/stats";
 import type { TopicScore } from "../analysis/topics";
 import type { Archetype } from "../analysis/personality";
 import type { Highlights } from "../analysis/highlights";
+import { observeReveals } from "./animate";
 
 export interface ReportData {
   stats: Stats;
@@ -10,6 +11,8 @@ export interface ReportData {
   highlights: Highlights;
   hasChatGPT: boolean;
   hasClaude: boolean;
+  chatgptMessageCount: number;
+  claudeMessageCount: number;
 }
 
 export type SlideRenderer = (data: ReportData) => HTMLElement | null;
@@ -22,6 +25,9 @@ export function renderReport(root: HTMLElement, data: ReportData, slides: SlideR
     if (el) container.appendChild(wrap(el));
   }
   setupKeyboardNav(container);
+  observeReveals(container);
+  const first = container.querySelector<HTMLElement>(".slide");
+  if (first) first.classList.add("is-visible");
 }
 
 function wrap(el: HTMLElement): HTMLElement {

@@ -12,11 +12,15 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^25.8.0",
     "html-to-image": "^1.11.13",
     "jsdom": "^29.1.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.13",
     "vitest": "^4.1.6"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4"
   }
 }

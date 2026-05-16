@@ -3,7 +3,7 @@ import type { ReportData } from "./report";
 
 export function shareCardSlide(data: ReportData): HTMLElement {
   const el = document.createElement("div");
-  el.className = "slide-card";
+  el.className = "slide-card theme-share";
   el.innerHTML = `
     <div class="label">Save your share card</div>
     <div id="share-card" class="share-card">

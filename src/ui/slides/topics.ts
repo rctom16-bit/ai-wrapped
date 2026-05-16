@@ -1,12 +1,20 @@
 import type { ReportData } from "../report";
 
+const EMOJI_MAP: Record<string, string> = {
+  Code: "💻", Cooking: "🍳", Travel: "✈️", Relationships: "❤️",
+  Work: "💼", Health: "🩺", Writing: "✍️", Learning: "📚",
+  Finance: "💸", Tech: "📱", Entertainment: "🎬", Books: "📖",
+  Home: "🏠", Pets: "🐾", Fitness: "🏃",
+};
+
 export function topicsSlide(data: ReportData): HTMLElement {
   const el = document.createElement("div");
-  el.className = "slide-card";
+  el.className = "slide-card theme-topics";
   const max = Math.max(1, ...data.topics.map((t) => t.score));
   const pills = data.topics.map((t) => {
-    const scale = 0.7 + (t.score / max) * 0.8;
-    return `<span class="topic-pill" style="font-size:${scale}em;">${escapeHtml(t.name)}</span>`;
+    const scale = 0.85 + (t.score / max) * 0.55;
+    const emoji = EMOJI_MAP[t.name] ?? "✨";
+    return `<span class="topic-pill" style="font-size:${scale}em;"><span class="pill-emoji">${emoji}</span>${escapeHtml(t.name)}</span>`;
   }).join("");
   el.innerHTML = `
     <div class="label">You talk about</div>
