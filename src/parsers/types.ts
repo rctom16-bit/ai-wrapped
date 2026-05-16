@@ -1,4 +1,4 @@
-export type Source = "chatgpt" | "claude";
+export type Source = "chatgpt" | "claude" | "grok" | "gemini";
 export type Role = "user" | "assistant";
 
 export interface Message {

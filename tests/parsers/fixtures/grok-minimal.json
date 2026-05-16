@@ -1,0 +1,11 @@
+[
+  {
+    "id": "g1",
+    "title": "Mars facts",
+    "createdAt": "2025-09-10T14:00:00Z",
+    "messages": [
+      { "sender": "USER", "content": "how long is a year on mars", "createdAt": "2025-09-10T14:00:00Z" },
+      { "sender": "ASSISTANT", "content": "687 Earth days.", "createdAt": "2025-09-10T14:00:20Z" }
+    ]
+  }
+]
