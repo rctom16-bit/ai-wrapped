@@ -2,7 +2,7 @@
 
 > Your year in AI conversations, beautifully — 100% in your browser.
 
-**Try it:** *link goes here once deployed*
+**Try it:** https://rctom16-bit.github.io/ai-wrapped/
 
 Drop in your ChatGPT and/or Claude export and get a fun, shareable year-in-review. Nothing is uploaded. Nothing is stored. The page never talks to a server about your data.
 
