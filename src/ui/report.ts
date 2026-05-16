@@ -3,6 +3,8 @@ import type { TopicScore } from "../analysis/topics";
 import type { Archetype } from "../analysis/personality";
 import type { Highlights } from "../analysis/highlights";
 import type { Quirks } from "../analysis/quirks";
+import type { Patterns } from "../analysis/patterns";
+import type { MonthlyBucket, LongestGap, WordHit, FirstMessage, ReplyRatio } from "../analysis/extras";
 import { observeReveals } from "./animate";
 
 export interface ReportData {
@@ -11,10 +13,21 @@ export interface ReportData {
   archetype: Archetype;
   highlights: Highlights;
   quirks: Quirks;
+  patterns: Patterns;
+  monthly: MonthlyBucket[];
+  longestGap: LongestGap;
+  topWords: WordHit[];
+  firstMessage: FirstMessage;
+  replyRatio: ReplyRatio;
+  hourByDay: number[][];
   hasChatGPT: boolean;
   hasClaude: boolean;
+  hasGrok: boolean;
+  hasGemini: boolean;
   chatgptMessageCount: number;
   claudeMessageCount: number;
+  grokMessageCount: number;
+  geminiMessageCount: number;
 }
 
 export type SlideRenderer = (data: ReportData) => HTMLElement | null;
