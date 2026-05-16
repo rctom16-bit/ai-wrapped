@@ -1,0 +1,44 @@
+import type { Stats } from "../analysis/stats";
+import type { TopicScore } from "../analysis/topics";
+import type { Archetype } from "../analysis/personality";
+import type { Highlights } from "../analysis/highlights";
+
+export interface ReportData {
+  stats: Stats;
+  topics: TopicScore[];
+  archetype: Archetype;
+  highlights: Highlights;
+  hasChatGPT: boolean;
+  hasClaude: boolean;
+}
+
+export type SlideRenderer = (data: ReportData) => HTMLElement | null;
+
+export function renderReport(root: HTMLElement, data: ReportData, slides: SlideRenderer[]): void {
+  root.innerHTML = `<div class="report"></div>`;
+  const container = root.querySelector<HTMLDivElement>(".report")!;
+  for (const slide of slides) {
+    const el = slide(data);
+    if (el) container.appendChild(wrap(el));
+  }
+  setupKeyboardNav(container);
+}
+
+function wrap(el: HTMLElement): HTMLElement {
+  const wrapper = document.createElement("section");
+  wrapper.className = "slide";
+  wrapper.appendChild(el);
+  return wrapper;
+}
+
+function setupKeyboardNav(container: HTMLElement): void {
+  const sections = () => Array.from(container.querySelectorAll<HTMLElement>(".slide"));
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    const dir = e.key === "ArrowDown" ? 1 : -1;
+    const list = sections();
+    const i = list.findIndex((s) => Math.abs(s.getBoundingClientRect().top) < window.innerHeight / 2);
+    const next = list[Math.max(0, Math.min(list.length - 1, i + dir))];
+    next?.scrollIntoView({ behavior: "smooth" });
+  });
+}
