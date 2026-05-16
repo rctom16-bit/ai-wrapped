@@ -7,3 +7,19 @@
 }
 html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: system-ui, sans-serif; }
 * { box-sizing: border-box; }
+.landing { max-width: 720px; margin: 0 auto; padding: 64px 24px; text-align: center; }
+.landing h1 { font-size: clamp(48px, 8vw, 96px); margin: 0; background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tagline { font-size: 20px; opacity: 0.9; }
+.privacy { font-size: 14px; opacity: 0.7; }
+.drops { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; margin: 32px 0; }
+@media (max-width: 640px) { .drops { grid-template-columns: 1fr; } }
+.drop { display: flex; flex-direction: column; gap: 8px; padding: 32px 16px; border: 2px dashed rgba(255,255,255,0.25); border-radius: 16px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+.drop:hover, .drop.dragging { border-color: var(--accent-2); background: rgba(124,77,255,0.08); }
+.drop.has-file { border-color: var(--accent-3); background: rgba(0,229,255,0.08); }
+.drop-label { font-weight: 600; font-size: 18px; }
+.drop-hint { font-size: 13px; opacity: 0.6; }
+.filename { font-size: 12px; opacity: 0.85; word-break: break-all; }
+button.primary { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); border: none; color: white; padding: 16px 32px; font-size: 18px; font-weight: 600; border-radius: 999px; cursor: pointer; }
+button.primary[disabled] { opacity: 0.4; cursor: not-allowed; }
+.howto { margin-top: 32px; text-align: left; opacity: 0.85; }
+.howto code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; }

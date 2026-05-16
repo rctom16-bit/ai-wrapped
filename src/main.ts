@@ -1,2 +1,8 @@
+import { renderLanding } from "./ui/landing";
+
 const app = document.getElementById("app");
-if (app) app.textContent = "AI Wrapped — scaffold ready.";
+if (app) {
+  renderLanding(app, (result) => {
+    console.log("submit", result);
+  });
+}
