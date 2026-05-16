@@ -1,5 +1,6 @@
 import type { Stats } from "./stats";
 import type { TopicScore } from "./topics";
+import type { Quirks } from "./quirks";
 import archetypes from "./archetypes.json";
 
 export interface Archetype {
@@ -19,15 +20,20 @@ function byId(id: string): Archetype {
 
 interface Rule {
   id: string;
-  match: (stats: Stats, topics: TopicScore[]) => boolean;
+  match: (stats: Stats, topics: TopicScore[], quirks?: Quirks) => boolean;
 }
 
 const topTopic = (topics: TopicScore[]) => topics[0]?.name ?? null;
 
 const RULES: Rule[] = [
   { id: "power-user",       match: (s) => s.messageCount >= 5000 },
+  { id: "insomniac",        match: (s) => s.peakHour >= 2 && s.peakHour <= 4 },
   { id: "night-coder",      match: (s, t) => topTopic(t) === "Code" && s.peakHour >= 21 },
   { id: "morning-thinker",  match: (s) => s.peakHour >= 5 && s.peakHour <= 9 },
+  { id: "polite-one",       match: (_s, _t, q) => !!q && q.politenessCount >= 20 && q.politenessCount / Math.max(1, q.avgUserMessageWords) > 0.0 },
+  { id: "emoji-poet",       match: (_s, _t, q) => !!q && q.emojiCount >= 30 },
+  { id: "question-machine", match: (_s, _t, q) => !!q && q.questionRate >= 0.7 },
+  { id: "deep-diver",       match: (_s, _t, q) => !!q && q.avgUserMessageWords >= 80 },
   { id: "recipe-hunter",    match: (_s, t) => topTopic(t) === "Cooking" },
   { id: "travel-planner",   match: (_s, t) => topTopic(t) === "Travel" },
   { id: "heart-whisperer",  match: (_s, t) => topTopic(t) === "Relationships" },
@@ -41,9 +47,9 @@ const RULES: Rule[] = [
   { id: "lurker",           match: (s) => s.messageCount < 50 },
 ];
 
-export function pickArchetype(stats: Stats, topics: TopicScore[]): Archetype {
+export function pickArchetype(stats: Stats, topics: TopicScore[], quirks?: Quirks): Archetype {
   for (const r of RULES) {
-    if (r.match(stats, topics)) return byId(r.id);
+    if (r.match(stats, topics, quirks)) return byId(r.id);
   }
   return byId("polyglot");
 }

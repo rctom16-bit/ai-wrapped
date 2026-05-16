@@ -6,10 +6,13 @@ import { computeStats } from "./analysis/stats";
 import { computeTopics } from "./analysis/topics";
 import { pickArchetype } from "./analysis/personality";
 import { computeHighlights } from "./analysis/highlights";
+import { computeQuirks } from "./analysis/quirks";
 import { renderReport, type SlideRenderer } from "./ui/report";
 import { numbersSlide } from "./ui/slides/numbers";
+import { calendarSlide } from "./ui/slides/calendar";
 import { rhythmSlide } from "./ui/slides/rhythm";
 import { topicsSlide } from "./ui/slides/topics";
+import { quirksSlide } from "./ui/slides/quirks";
 import { personalitySlide } from "./ui/slides/personality";
 import { compareSlide } from "./ui/slides/compare";
 import { highlightsSlide } from "./ui/slides/highlights";
@@ -29,7 +32,8 @@ renderLanding(app, async (result) => {
 
     const stats = computeStats(recent);
     const topics = computeTopics(recent);
-    const archetype = pickArchetype(stats, topics);
+    const quirks = computeQuirks(recent);
+    const archetype = pickArchetype(stats, topics, quirks);
     const highlights = computeHighlights(recent);
 
     const hasChatGPT = !!result.chatgptFile;
@@ -39,8 +43,10 @@ renderLanding(app, async (result) => {
 
     const slideRenderers: SlideRenderer[] = [
       numbersSlide,
+      calendarSlide,
       rhythmSlide,
       topicsSlide,
+      quirksSlide,
       personalitySlide,
       ...(hasChatGPT && hasClaude ? [compareSlide] : []),
       highlightsSlide,
@@ -49,7 +55,7 @@ renderLanding(app, async (result) => {
 
     renderReport(
       app,
-      { stats, topics, archetype, highlights, hasChatGPT, hasClaude, chatgptMessageCount, claudeMessageCount },
+      { stats, topics, archetype, highlights, quirks, hasChatGPT, hasClaude, chatgptMessageCount, claudeMessageCount },
       slideRenderers,
     );
   } catch (err) {

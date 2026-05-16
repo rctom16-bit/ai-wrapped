@@ -1,5 +1,6 @@
 [
   { "id": "night-coder",       "name": "The Night Coder",        "emoji": "🌙",  "blurb": "You and your IDE see more sunrises than your bed does." },
+  { "id": "insomniac",         "name": "The 3 AM Philosopher",   "emoji": "🦉",  "blurb": "Your best conversations happen when the world is asleep." },
   { "id": "morning-thinker",   "name": "The Morning Thinker",    "emoji": "☀️",  "blurb": "Coffee in hand, brain online before most people are." },
   { "id": "weekend-warrior",   "name": "The Weekend Warrior",    "emoji": "🛠️",  "blurb": "Monday-to-Friday is real life. Saturdays are for adventures with AI." },
   { "id": "recipe-hunter",     "name": "The Recipe Hunter",      "emoji": "🍝",  "blurb": "You'd ask a chatbot before you'd ask your grandma." },
@@ -13,5 +14,9 @@
   { "id": "polyglot",          "name": "The Curious Polymath",   "emoji": "🦊",  "blurb": "You can't stay on one topic for long, and that's the point." },
   { "id": "power-user",        "name": "The Power User",         "emoji": "⚡",  "blurb": "If chat tokens were frequent flyer miles, you'd own a small airline." },
   { "id": "tinkerer",          "name": "The Tinkerer",           "emoji": "🔧",  "blurb": "There is no problem that cannot be solved with a how-to and some grit." },
-  { "id": "lurker",            "name": "The Quiet Listener",     "emoji": "🤫",  "blurb": "Short, sharp questions. You know exactly what you want." }
+  { "id": "lurker",            "name": "The Quiet Listener",     "emoji": "🤫",  "blurb": "Short, sharp questions. You know exactly what you want." },
+  { "id": "question-machine",  "name": "The Question Machine",   "emoji": "❓",  "blurb": "Why? But why? Okay but really why? You'd make Socrates proud." },
+  { "id": "polite-one",        "name": "The Polite One",         "emoji": "🙏",  "blurb": "The AI doesn't have feelings, but if it did, it would adore you." },
+  { "id": "emoji-poet",        "name": "The Emoji Poet",         "emoji": "🎨",  "blurb": "Why use 100 words when 12 emojis will do? 💯🔥✨" },
+  { "id": "deep-diver",        "name": "The Deep Diver",         "emoji": "🌊",  "blurb": "Your conversations go on for chapters. You don't stop until you really know." }
 ]

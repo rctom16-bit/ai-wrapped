@@ -13,12 +13,12 @@ export function numbersSlide(data: ReportData): HTMLElement {
         <div class="sub">messages</div>
       </div>
       <div>
-        <div class="num" data-count-to="${data.stats.userWords}">0</div>
-        <div class="sub">words from you</div>
+        <div class="num">${data.quirks.hoursSpent.toLocaleString()}h</div>
+        <div class="sub">spent chatting</div>
       </div>
       <div>
-        <div class="num" data-count-to="${data.stats.assistantWords}">0</div>
-        <div class="sub">words from AI</div>
+        <div class="num" data-count-to="${data.stats.userWords}">0</div>
+        <div class="sub">words from you</div>
       </div>
     </div>
   `;

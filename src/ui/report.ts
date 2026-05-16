@@ -2,6 +2,7 @@ import type { Stats } from "../analysis/stats";
 import type { TopicScore } from "../analysis/topics";
 import type { Archetype } from "../analysis/personality";
 import type { Highlights } from "../analysis/highlights";
+import type { Quirks } from "../analysis/quirks";
 import { observeReveals } from "./animate";
 
 export interface ReportData {
@@ -9,6 +10,7 @@ export interface ReportData {
   topics: TopicScore[];
   archetype: Archetype;
   highlights: Highlights;
+  quirks: Quirks;
   hasChatGPT: boolean;
   hasClaude: boolean;
   chatgptMessageCount: number;

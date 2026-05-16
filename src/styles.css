@@ -210,6 +210,20 @@ button.primary[disabled] { opacity: 0.4; cursor: not-allowed; box-shadow: none; 
     #1a0b14;
 }
 
+.slide:has(.theme-calendar) {
+  background:
+    radial-gradient(80vw 60vh at 20% 80%, rgba(6, 214, 160, 0.50), transparent 60%),
+    radial-gradient(80vw 60vh at 80% 20%, rgba(0, 229, 255, 0.45), transparent 60%),
+    #0b1a18;
+}
+
+.slide:has(.theme-quirks) {
+  background:
+    radial-gradient(80vw 60vh at 50% 30%, rgba(255, 209, 102, 0.50), transparent 60%),
+    radial-gradient(80vw 60vh at 50% 90%, rgba(124, 77, 255, 0.45), transparent 60%),
+    #1a1408;
+}
+
 .slide:has(.theme-share) {
   background:
     radial-gradient(100vw 80vh at 50% 50%, rgba(124, 77, 255, 0.45), transparent 60%),
@@ -429,6 +443,97 @@ button.primary[disabled] { opacity: 0.4; cursor: not-allowed; box-shadow: none; 
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(255, 77, 77, 0.35);
 }
+
+/* ---------- Calendar heatmap slide ---------- */
+
+.cal-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(56px, 11vw, 120px);
+  margin: 8px 0 8px;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent-5), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cal-subtitle { font-size: 15px; opacity: 0.8; margin: 0 auto 24px; }
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  gap: 3px;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 1fr);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cal-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.18s;
+}
+.cal-cell:hover { transform: scale(1.6); }
+.cal-cell[data-l="1"] { background: rgba(6, 214, 160, 0.30); }
+.cal-cell[data-l="2"] { background: rgba(6, 214, 160, 0.55); }
+.cal-cell[data-l="3"] { background: rgba(0, 229, 255, 0.75); }
+.cal-cell[data-l="4"] { background: linear-gradient(135deg, var(--accent-3), var(--accent-2)); box-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.cal-legend .cal-cell { width: 14px; }
+
+/* ---------- Quirks slide ---------- */
+
+.quirks-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(40px, 8vw, 72px);
+  letter-spacing: -0.03em;
+  margin: 8px 0 24px;
+  background: linear-gradient(135deg, var(--accent-4), var(--accent-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.quirks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 12px; }
+@media (max-width: 640px) { .quirks-grid { grid-template-columns: 1fr; } }
+
+.quirk-card {
+  padding: 22px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(8px);
+  text-align: left;
+}
+.quirk-icon { font-size: 32px; }
+.quirk-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 42px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent-4), var(--accent-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 4px 0 6px;
+}
+.quirk-sub { font-size: 14px; opacity: 0.85; }
+.quirk-flavour { font-size: 13px; opacity: 0.7; margin-top: 8px; font-style: italic; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
