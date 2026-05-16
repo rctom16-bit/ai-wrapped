@@ -1,0 +1,79 @@
+[
+  {
+    "id": "s1",
+    "title": "Pasta recipe",
+    "create_time": 1738339200.0,
+    "update_time": 1738339400.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1738339200.0, "content": { "content_type": "text", "parts": ["recipe for chicken pasta with a creamy sauce please"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1738339260.0, "content": { "content_type": "text", "parts": ["Cook the pasta until al dente. In a skillet, sear chicken with garlic and butter, then add cream and parmesan..."] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s2",
+    "title": "Debug python error",
+    "create_time": 1740931200.0,
+    "update_time": 1740931400.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1740931200.0, "content": { "content_type": "text", "parts": ["can you help me debug this python function that throws a key error"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1740931240.0, "content": { "content_type": "text", "parts": ["The KeyError happens because the dictionary doesn't have that key. Use .get() with a default, or check membership first."] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s3",
+    "title": "Lisbon trip ideas",
+    "create_time": 1743436800.0,
+    "update_time": 1743437000.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1743436800.0, "content": { "content_type": "text", "parts": ["planning a trip to lisbon, what flights and hotels do you recommend"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1743436860.0, "content": { "content_type": "text", "parts": ["TAP and easyJet have good fares. Stay in Bairro Alto for nightlife or Alfama for old-city charm. The airport is a 15-minute taxi to downtown."] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s4",
+    "title": "Resume rewrite",
+    "create_time": 1746028800.0,
+    "update_time": 1746029000.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1746028800.0, "content": { "content_type": "text", "parts": ["help me rephrase this bullet for my resume to sound more impactful for an engineering manager interview"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1746028870.0, "content": { "content_type": "text", "parts": ["Try: 'Led a 6-person team that shipped a customer-facing project under deadline pressure, growing weekly active users by 35%.'"] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s5",
+    "title": "TypeScript regex",
+    "create_time": 1748707200.0,
+    "update_time": 1748707350.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1748707200.0, "content": { "content_type": "text", "parts": ["typescript regex to match an email address but exclude .test and .example domains"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1748707260.0, "content": { "content_type": "text", "parts": ["Use a negative lookahead before the TLD: /^[\\w.+-]+@[\\w-]+\\.(?!test$|example$)[\\w.]+$/"] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s6",
+    "title": "React deploy bug",
+    "create_time": 1751299200.0,
+    "update_time": 1751299400.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1751299200.0, "content": { "content_type": "text", "parts": ["can you help me debug my react app deploy that is failing in docker with a stack trace about missing modules"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1751299260.0, "content": { "content_type": "text", "parts": ["Make sure the Dockerfile copies package.json before running npm ci, and check the .dockerignore isn't excluding the node_modules build step."] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  },
+  {
+    "id": "s7",
+    "title": "Late night refactor",
+    "create_time": 1753977600.0,
+    "update_time": 1753977800.0,
+    "mapping": {
+      "r": { "id": "r", "parent": null, "children": ["m1"], "message": null },
+      "m1": { "id": "m1", "parent": "r", "children": ["m2"], "message": { "id": "m1", "author": { "role": "user" }, "create_time": 1753977600.0, "content": { "content_type": "text", "parts": ["can you help me refactor this rust function to use iterators instead of a manual for loop, also explain the api differences"] } } },
+      "m2": { "id": "m2", "parent": "m1", "children": [], "message": { "id": "m2", "author": { "role": "assistant" }, "create_time": 1753977680.0, "content": { "content_type": "text", "parts": ["Use .iter().filter().map().collect() — it's lazy by default, so nothing runs until you collect or consume. The borrow checker is happier too."] }, "metadata": { "model_slug": "gpt-4" } } }
+    }
+  }
+]

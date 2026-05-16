@@ -17,6 +17,8 @@ export function renderLanding(root: HTMLElement, onSubmit: (r: LandingResult) =>
 
       <button class="primary" id="go" disabled>See my year →</button>
 
+      <p class="demo">Don't have an export handy? <a href="#" id="try-demo">Try with sample data</a>.</p>
+
       <details class="howto">
         <summary>How do I get my export?</summary>
         <p><strong>ChatGPT:</strong> Settings → Data Controls → Export data. You'll get an email with a ZIP. Inside is <code>conversations.json</code>. Drop that file above.</p>
@@ -53,6 +55,18 @@ export function renderLanding(root: HTMLElement, onSubmit: (r: LandingResult) =>
   }
 
   go.addEventListener("click", () => onSubmit(state));
+
+  root.querySelector<HTMLAnchorElement>("#try-demo")!.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const [chatBlob, claudeBlob] = await Promise.all([
+      fetch("./samples/chatgpt-sample.json").then((r) => r.blob()),
+      fetch("./samples/claude-sample.json").then((r) => r.blob()),
+    ]);
+    onSubmit({
+      chatgptFile: new File([chatBlob], "chatgpt-sample.json", { type: "application/json" }),
+      claudeFile: new File([claudeBlob], "claude-sample.json", { type: "application/json" }),
+    });
+  });
 }
 
 function dropZone(which: "chatgpt" | "claude", label: string): string {

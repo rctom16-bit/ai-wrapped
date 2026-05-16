@@ -1,0 +1,52 @@
+[
+  {
+    "uuid": "c1",
+    "name": "Edinburgh weekend",
+    "created_at": "2025-04-12T20:00:00Z",
+    "updated_at": "2025-04-12T20:05:00Z",
+    "chat_messages": [
+      { "uuid": "m1", "sender": "human", "text": "weekend trip to edinburgh in october, what to pack and what to do", "created_at": "2025-04-12T20:00:00Z" },
+      { "uuid": "m2", "sender": "assistant", "text": "Bring a windproof jacket and good walking shoes. Must-dos: Arthur's Seat at sunrise, Calton Hill at dusk, the Royal Mile, and a single-malt tasting at one of the Old Town distilleries.", "created_at": "2025-04-12T20:04:00Z" }
+    ]
+  },
+  {
+    "uuid": "c2",
+    "name": "Carbonara",
+    "created_at": "2025-06-03T22:30:00Z",
+    "updated_at": "2025-06-03T22:35:00Z",
+    "chat_messages": [
+      { "uuid": "m1", "sender": "human", "text": "authentic carbonara recipe, please no cream", "created_at": "2025-06-03T22:30:00Z" },
+      { "uuid": "m2", "sender": "assistant", "text": "Guanciale, eggs, pecorino romano, black pepper. Render the guanciale, toss hot pasta in egg-cheese-pepper mixture off the heat. No cream, no garlic, no onion.", "created_at": "2025-06-03T22:33:00Z" }
+    ]
+  },
+  {
+    "uuid": "c3",
+    "name": "Linux laptop suspend",
+    "created_at": "2025-08-19T23:10:00Z",
+    "updated_at": "2025-08-19T23:25:00Z",
+    "chat_messages": [
+      { "uuid": "m1", "sender": "human", "text": "my linux laptop won't wake from suspend reliably, can you help me debug systemd-logind", "created_at": "2025-08-19T23:10:00Z" },
+      { "uuid": "m2", "sender": "assistant", "text": "Check journalctl -b -1 around the suspend timestamp. Common culprits: a misbehaving USB device, an outdated kernel module, or a wifi driver that doesn't respect the s2idle path.", "created_at": "2025-08-19T23:14:00Z" }
+    ]
+  },
+  {
+    "uuid": "c4",
+    "name": "Difficult message",
+    "created_at": "2025-10-02T23:40:00Z",
+    "updated_at": "2025-10-02T23:48:00Z",
+    "chat_messages": [
+      { "uuid": "m1", "sender": "human", "text": "can you help me write a difficult message to a friend about a long argument, i feel hurt", "created_at": "2025-10-02T23:40:00Z" },
+      { "uuid": "m2", "sender": "assistant", "text": "Lead with what you value about the friendship, then name the specific moment that hurt and why, then propose the conversation you want to have. Avoid 'you always' and 'you never'.", "created_at": "2025-10-02T23:45:00Z" }
+    ]
+  },
+  {
+    "uuid": "c5",
+    "name": "Marathon training",
+    "created_at": "2025-12-08T06:00:00Z",
+    "updated_at": "2025-12-08T06:08:00Z",
+    "chat_messages": [
+      { "uuid": "m1", "sender": "human", "text": "i'm doing my first marathon in april, help me build a 16 week training plan, current weekly mileage 30km", "created_at": "2025-12-08T06:00:00Z" },
+      { "uuid": "m2", "sender": "assistant", "text": "Build to a peak of 60–65km/week. Add one long run (start at 14km, +2 every week), one tempo, one easy. Cut back every fourth week. Two weeks of taper before race day.", "created_at": "2025-12-08T06:06:00Z" }
+    ]
+  }
+]
