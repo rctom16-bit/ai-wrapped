@@ -1,0 +1,17 @@
+{
+  "Code": ["code", "function", "bug", "error", "python", "javascript", "typescript", "rust", "react", "api", "git", "docker", "sql", "regex", "compile", "deploy", "debug", "stack", "library", "framework"],
+  "Cooking": ["recipe", "cook", "bake", "dinner", "lunch", "breakfast", "ingredient", "oven", "pasta", "chicken", "vegan", "vegetarian", "sauce", "dessert", "marinade", "spice"],
+  "Travel": ["travel", "flight", "hotel", "airbnb", "vacation", "trip", "itinerary", "passport", "visa", "tokyo", "paris", "lisbon", "country", "city", "airport"],
+  "Relationships": ["girlfriend", "boyfriend", "partner", "husband", "wife", "dating", "breakup", "argument", "feel", "feeling", "friend", "family", "mom", "dad", "sister", "brother"],
+  "Work": ["job", "boss", "manager", "interview", "resume", "salary", "raise", "meeting", "project", "deadline", "coworker", "email", "career", "linkedin", "promotion"],
+  "Health": ["health", "doctor", "symptom", "pain", "sleep", "anxiety", "diet", "exercise", "workout", "weight", "medication", "therapy", "mental"],
+  "Writing": ["write", "essay", "article", "blog", "story", "poem", "novel", "draft", "editor", "grammar", "rephrase", "tone", "headline"],
+  "Learning": ["learn", "study", "tutorial", "explain", "definition", "math", "history", "language", "spanish", "french", "german", "course", "concept"],
+  "Finance": ["money", "salary", "invest", "stock", "etf", "tax", "budget", "savings", "loan", "mortgage", "crypto", "bitcoin", "retirement", "401k"],
+  "Tech": ["iphone", "android", "laptop", "mac", "windows", "linux", "router", "wifi", "smart home", "speaker", "headphones"],
+  "Entertainment": ["movie", "film", "show", "series", "episode", "netflix", "hbo", "actor", "director", "music", "song", "album", "playlist"],
+  "Books": ["book", "novel", "author", "chapter", "read", "fiction", "nonfiction", "audiobook", "kindle"],
+  "Home": ["paint", "renovation", "diy", "ikea", "furniture", "garden", "plant", "kitchen", "bathroom", "apartment", "lease", "landlord"],
+  "Pets": ["dog", "cat", "puppy", "kitten", "pet", "vet", "leash", "litter", "training", "treats"],
+  "Fitness": ["run", "running", "gym", "lift", "squat", "deadlift", "marathon", "cycling", "yoga", "pilates", "strava"]
+}
